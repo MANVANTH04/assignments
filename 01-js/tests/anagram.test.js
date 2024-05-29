@@ -35,3 +35,4 @@ describe('isAnagram', () => {
 		expect(isAnagram('openai!', 'open')).toBe(false);
 	});
 });
+
