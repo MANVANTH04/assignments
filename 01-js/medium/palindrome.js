@@ -4,6 +4,8 @@
 */
 
 function isPalindrome(str) {
+  str.tolowercase();
+  
   return true;
 }
 

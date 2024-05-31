@@ -6,6 +6,9 @@
 
 function isAnagram(str1, str2) {
 
+  str1 = str1.replace(/\s+/g, '').toLowerCase();
+  str2 = str2.replace(/\s+/g, '').toLowerCase();
+
   if(str1.length != str2.length){
     return false
   }
@@ -13,14 +16,18 @@ function isAnagram(str1, str2) {
   var anagram1 = str1.split('');
   var anagram2 = str2.split('');
   for (i=0; i<anagram1.length; i++){
-    if(anagram1[i] in anagram2 ){
-      var indexVal = anagram2.indexof(anagram1[i])
+    if(anagram2.includes(anagram1[i]) ){
+      var indexVal = anagram2.indexOf(anagram1[i])
       anagram2.splice(indexVal,1)
     }
+    else{
+      return false
+    }
   }
- 
+    
 
-  return (anagram2.length = 0);
+
+  return (anagram2.length === 0);
 
 
 }
